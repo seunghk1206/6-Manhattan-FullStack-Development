@@ -1,0 +1,2 @@
+paper = open("")
+#dict
