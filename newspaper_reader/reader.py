@@ -1,3 +1,7 @@
 paper = open("")
+Dict = {}
+eachLine = 0
 #dict
-paper.read()
+lines = paper.read(eachLine)
+for eachWord in lines:
+    Dict[eachWord] += 1
