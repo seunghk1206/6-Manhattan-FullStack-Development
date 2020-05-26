@@ -2,6 +2,8 @@ paper = open("")
 Dict = {}
 eachLine = 0
 #dict
-lines = paper.read(eachLine)
-for eachWord in lines:
-    Dict[eachWord] += 1
+for i in range(10000):
+    lines = paper.read(eachLine)
+    L1 = list(lines.split(" "))
+    for eachWord in L1:
+        Dict[eachWord] += 1
