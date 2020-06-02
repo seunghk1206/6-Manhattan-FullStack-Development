@@ -1,10 +1,8 @@
 import itertools
 paper = open("./newspaper_reader/eng_news_2016_10K-sentences.txt", "r", encoding = "utf8")
 # "r", UTF-8,, ./newspaper_reader/eng_news_2016_10K-sentences.txt
-no_punct = ""
 Dict = {}
 Lolines = []
-noPuncList = []
 tempL = []
 Ln2 = []
 #dict
@@ -53,4 +51,3 @@ for eachWord in Ln2:
     except:
         Dict[eachWord] = 1
 print(Dict)
-# readline
