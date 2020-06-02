@@ -1,6 +1,7 @@
 import itertools
-paper = open("/Users/kimseunghyeon/Desktop/개인적인 것들(?)/CSfile/eng_news_2016_10K-sentences.txt", "r", encoding = "utf8")
+paper = open("./newspaper_reader/eng_news_2016_10K-sentences.txt", "r", encoding = "utf8")
 # "r", UTF-8,, ./newspaper_reader/eng_news_2016_10K-sentences.txt
+#for mac: /Users/kimseunghyeon/Desktop/개인적인 것들(?)/CSfile/eng_news_2016_10K-sentences.txt
 no_punct = ""
 Dict = {}
 Lolines = []
@@ -55,13 +56,4 @@ replace(Lolines, tempL, '/')
 replace(tempL, Lolines, '“')
 for line in Lolines:
     tempL.append(line.split(' '))
-for i in range(len(tempL)//2):
-    Ln2.append([tempL[0], tempL[1]])
-    tempL.remove(tempL[0])
-    tempL.remove(tempL[0])
-for each in Ln2:
-    try:
-        Dict[each[0], each[1]] += 1
-    except:
-        Dict[each[0], each[1]] = 1
-print(Dict)
+print(tempL)
