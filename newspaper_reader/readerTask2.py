@@ -1,15 +1,10 @@
 import itertools
 paper = open("./newspaper_reader/eng_news_2016_10K-sentences.txt", "r", encoding = "utf8")
 # "r", UTF-8,, ./newspaper_reader/eng_news_2016_10K-sentences.txt
-#for mac: /Users/kimseunghyeon/Desktop/개인적인 것들(?)/CSfile/eng_news_2016_10K-sentences.txt
-no_punct = ""
 Dict = {}
 Lolines = []
-noPuncList = []
 tempL = []
 Ln2 = []
-zero = 0
-one = 1
 #dict
 def replace(listAccept, listRecieve, whichOne):
     for each in listAccept:
@@ -46,14 +41,13 @@ replace(Lolines, tempL, "'")
 replace(tempL, Lolines, '~')
 replace(Lolines, tempL, '`')
 replace(tempL, Lolines, '?')
-replace(Lolines, tempL, '—')
-replace(tempL, Lolines, '’')
-replace(Lolines, tempL, '!')
-replace(tempL, Lolines, '0')
-replace(Lolines, tempL, '|')
-replace(tempL, Lolines, '‘')
-replace(Lolines, tempL, '/')
-replace(tempL, Lolines, '“')
-for line in Lolines:
-    tempL.append(line.split(' '))
-print(tempL)
+for each in range(len(Lolines)):
+    Ln = list(Lolines[each].split(" "))
+    for each in Ln:
+        Ln2.append(each.lower())
+for each in range(len(Ln2)//2):
+    try:
+        Dict[Ln2[0::2][each], Ln2[1::2][each]] += 1
+    except:
+        Dict[Ln2[0::2][each], Ln2[1::2][each]] = 1
+print(Dict)
