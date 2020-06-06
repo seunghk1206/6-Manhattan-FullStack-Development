@@ -46,8 +46,16 @@ for each in range(len(Lolines)):
     for each in Ln:
         Ln2.append(each.lower())
 for each in range(len(Ln2)//2):
+    if each > len(Ln2[0::2]):
+        pass
+    else:
+        tempL.append(tuple(Ln2[0::2][each], Ln2[1::2][each]))
+for each in tempL:
     try:
-        Dict[Ln2[0::2][each], Ln2[1::2][each]] += 1
+        Dict[each] += 1
     except:
-        Dict[Ln2[0::2][each], Ln2[1::2][each]] = 1
+        Dict[each] = 1
 print(Dict)
+# python ./newspaper_reader/readerTask2.py
+# cuda
+# numpy
