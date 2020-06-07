@@ -1,28 +1,26 @@
 a = int(input())
 LoP = []
 LoP2 = []
-countA = 0
-countB = 0
+g = 0
 for i in range(a):
     x = input()
     LoP.append(x)
-
 for each in range(a):
-    if LoP[each][0] == ')':
-        print("NO")
-    else:
-        for i in LoP[each]:
-            if i == '(':
-                try:
-                    LoP.remove(i)
-                    LoP.remove(')')
-                except:
-                    if len(LoP) == 0:
-                        print("YES")
-                    else:
-                        print("NO")
-                    break
-#
+    for n in LoP[each]:
+        if g >= 0:
+            if n == '(':
+                g += 1
+            elif n == ')':
+                g -= 1
+        elif g < 0:
+            print('NO')
+            break
+    if g == 0:
+        print('YES')
+    elif g > 0:
+        print('NO')
+    g = 0
+#python ./questions/question#8.py
 '''
 ))((()))
 ()(())
