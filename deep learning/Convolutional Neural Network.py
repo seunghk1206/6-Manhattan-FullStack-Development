@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
+# In[1]:
 
 
 import tensorflow as tf
@@ -23,7 +23,7 @@ X = np.array(X/255.0)
 y = np.array(y)
 
 
-# In[12]:
+# In[2]:
 
 
 model = Sequential()
@@ -33,7 +33,7 @@ model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size = (2, 2)))
 
 
-# In[13]:
+# In[3]:
 
 
 model.add(Conv2D(64, (3, 3)))
@@ -41,7 +41,7 @@ model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size = (2, 2)))
 
 
-# In[14]:
+# In[4]:
 
 
 model.add(Flatten())
@@ -51,17 +51,17 @@ model.add(Dense(1))
 model.add(Activation("sigmoid"))
 
 
-# In[15]:
-
-
-model.compile(loss = "binary_crossentropy", optimizer = "adam", metrics = ["accuracy"])
-model.fit(X, y, batch_size = 32, epochs = 1, validation_split = 0.1, callbacks = [tensorboard])
-
-
 # In[ ]:
 
 
+model.compile(loss = "binary_crossentropy", optimizer = "adam", metrics = ["accuracy"])
+model.fit(X, y, batch_size = 32, epochs = 30, validation_split = 0.1, callbacks = [tensorboard])
 
+
+# In[6]:
+
+
+model.save('Dog_Cat_CNN.model')
 
 
 # In[ ]:
