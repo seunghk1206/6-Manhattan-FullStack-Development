@@ -3,6 +3,7 @@
 -Machine Learning 목표 => input 을 통해 output을 찾는거
 -각각의 output, input 을 neuron.
 -Hidden Layer에 각각의 input neuron.
+-Hidden Layer가 하나면 그냥 neural network 하지만 
 '''
 #[2]
 import tensorflow as tf
