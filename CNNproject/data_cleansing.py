@@ -23,7 +23,7 @@ def splitran(L, freq):
         ListB = []
     return ListA
 DataPaper = open("C:/Users/seunghyeon/Documents/GitHub/python_enhanced/CNNproject/datasets_228_482_diabetes.txt", "r", encoding = "utf8")
-splitL = splitran(chain2D([each.split(',') for each in [DataPaper.readline(each) for each in range(768)]]), 9)
+splitL = [each.split(',') for each in [DataPaper.readline(each) for each in range(768)]]
 #Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age,Outcome
 #9
 print(splitL)
